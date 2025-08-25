@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager with Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+      }
+      h2 {
+        text-align: center;
+      }
+      input {
+        width: 90%;
+        padding: 8px;
+        margin: 5px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 8px 12px;
+        margin-top: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px;
+        border-bottom: 1px solid #eee;
+      }
+      .done {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="loginPage">
+      <h2>🔐 Login</h2>
+      <input type="text" id="username" placeholder="Enter username" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container" id="taskPage" style="display: none">
+      <h2>📚 Student Task Manager</h2>
+      <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+      const taskList = document.getElementById("taskList");
+
+      // Dummy username and password (for practice only)
+      const USERNAME = "student";
+      const PASSWORD = "1234";
+
+      function login() {
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        if (user === USERNAME && pass === PASSWORD) {
+          document.getElementById("loginPage").style.display = "none";
+          document.getElementById("taskPage").style.display = "block";
+          loadTasks();
+        } else {
+          alert("Invalid username or password!");
+        }
+      }
+
+      function logout() {
+        document.getElementById("loginPage").style.display = "block";
+        document.getElementById("taskPage").style.display = "none";
+      }
+
+      function addTask() {
+        let taskInput = document.getElementById("taskInput");
+        if (taskInput.value === "") return;
+
+        let li = document.createElement("li");
+        li.innerHTML = `
+        <span onclick="toggleTask(this)">${taskInput.value}</span>
+        <button onclick="deleteTask(this)">❌</button>
+      `;
+        taskList.appendChild(li);
+        taskInput.value = "";
+
+        saveTasks();
+      }
+
+      function toggleTask(task) {
+        task.classList.toggle("done");
+        saveTasks();
+      }
+
+      function deleteTask(btn) {
+        btn.parentElement.remove();
+        saveTasks();
+      }
+
+      function saveTasks() {
+        localStorage.setItem("tasks", taskList.innerHTML);
+      }
+
+      function loadTasks() {
+        taskList.innerHTML = localStorage.getItem("tasks") || "";
+      }
+    </script>
+  </body>
+</html>
