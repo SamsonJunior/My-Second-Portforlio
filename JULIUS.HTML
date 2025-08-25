@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julius Samson Yaji - Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #2c3e50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .section {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      /* Profile Section */
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .profile img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #2c3e50;
+      }
+
+      .profile-text {
+        flex: 1;
+      }
+
+      /* CV Button */
+      .cv-btn {
+        display: inline-block;
+        background: #2c3e50;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .cv-btn:hover {
+        background: #1a242f;
+      }
+
+      /* Skills Section */
+      .skill {
+        margin: 15px 0;
+      }
+
+      .skill p {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .progress {
+        background: #ddd;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 20px;
+      }
+
+      .progress-bar {
+        height: 20px;
+        text-align: right;
+        padding-right: 5px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .html {
+        width: 90%;
+        background: #e44d26;
+      }
+      .css {
+        width: 80%;
+        background: #264de4;
+      }
+      .js {
+        width: 70%;
+        background: #f7df1e;
+        color: #333;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #2c3e50;
+        color: white;
+        margin-top: 20px;
+      }
+
+      /* Responsive for mobile */
+      @media (max-width: 768px) {
+        nav a {
+          display: block;
+          margin: 8px 0;
+        }
+
+        .profile {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile img {
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Logo -->
+    <header>
+      <h1>🌐 Julius Samson Yaji</h1>
+      <p>Student | Aspiring Web Developer | Programmer</p>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#it">My IT Placement</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Profile Section -->
+      <section id="about" class="section">
+        <div class="profile">
+          <!-- Replace "yourphoto.jpg" with your real photo -->
+          <img src="2 pass port.jpg" alt="Julius Samson Yaji" />
+          <div class="profile-text">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Julius Samson Yaji</p>
+            <p><strong>Occupation:</strong> Student</p>
+            <p>
+              <strong>University:</strong> Nasarawa State University, Keffi
+              (NSUK)
+            </p>
+            <p><strong>Department:</strong> Computer Science</p>
+            <p><strong>Level:</strong> 300 Level (SIWES)</p>
+            <p><strong>Country:</strong> Nigeria</p>
+            <p><strong>State:</strong> Nasarawa State</p>
+            <p><strong>LGA:</strong> Karu</p>
+            <p><strong>Ward:</strong> Gitata</p>
+            <p><strong>Village:</strong> Angwan Alura</p>
+            <p><strong>Address:</strong> Oppo. Old Mai Angwan Residence</p>
+            <!-- CV Download -->
+            <a href="peter(1).pdf" class="cv-btn" download>📄 Download My CV</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- IT Placement Section -->
+      <section id="it" class="section">
+        <h2>SIWES / IT Placement</h2>
+        <p>
+          I am currently undergoing my Student Industrial Work Experience Scheme
+          (SIWES) at <strong>Dama Software Solution</strong>.
+        </p>
+        <p>
+          During this training, I am improving my skills in
+          <strong>Web Development</strong>, learning HTML, CSS, and JavaScript,
+          and gaining real-world programming experience.
+        </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section">
+        <h2>My Skills</h2>
+        <div class="skill">
+          <p>HTML</p>
+          <div class="progress">
+            <div class="progress-bar html">90%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <p>CSS</p>
+          <div class="progress">
+            <div class="progress-bar css">80%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <p>JavaScript</p>
+          <div class="progress">
+            <div class="progress-bar js">70%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> juliussy46ij@nsuk.edu.ng</p>
+        <p><strong>Portfolio Project:</strong> Personal Website</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2025 Julius Samson Yaji | Built with ❤ and Code</p>
+    </footer>
+  </body>
+</html>
